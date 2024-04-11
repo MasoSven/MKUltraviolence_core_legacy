@@ -353,10 +353,10 @@ bf_sha256(Var arglist, Byte next, void *vdata, Objid progr)
 static package
 bf_get_microsecond(Var arglist, Byte next, void *vdata, Objid progr)
 {
-    struct timeval t;
+    struct timeval tv;
     long useconds;
-    gettimeofday(&t, NULL);
-    useconds = t.tv_usec;
+    gettimeofday(&tv, NULL);
+    useconds = tv.tv_usec;
 
     Var r;
     r.type = TYPE_INT;
